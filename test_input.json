@@ -1,63 +1,159 @@
 {
-  "input": {
-    "workflow": {
-      "3": {
-        "inputs": {
-          "seed": 234234,
-          "steps": 20,
-          "cfg": 8,
-          "sampler_name": "euler",
-          "scheduler": "normal",
-          "denoise": 1,
-          "model": ["4", 0],
-          "positive": ["6", 0],
-          "negative": ["7", 0],
-          "latent_image": ["5", 0]
-        },
-        "class_type": "KSampler"
-      },
-      "4": {
-        "inputs": {
-          "ckpt_name": "sd_xl_base_1.0.safetensors"
-        },
-        "class_type": "CheckpointLoaderSimple"
-      },
-      "5": {
-        "inputs": {
-          "width": 512,
-          "height": 512,
-          "batch_size": 1
-        },
-        "class_type": "EmptyLatentImage"
-      },
-      "6": {
-        "inputs": {
-          "text": "beautiful scenery nature glass bottle landscape, purple galaxy bottle,",
-          "clip": ["4", 1]
-        },
-        "class_type": "CLIPTextEncode"
-      },
-      "7": {
-        "inputs": {
-          "text": "text, watermark",
-          "clip": ["4", 1]
-        },
-        "class_type": "CLIPTextEncode"
-      },
-      "8": {
-        "inputs": {
-          "samples": ["3", 0],
-          "vae": ["4", 2]
-        },
-        "class_type": "VAEDecode"
-      },
-      "9": {
-        "inputs": {
-          "filename_prefix": "ComfyUI/test",
-          "images": ["8", 0]
-        },
-        "class_type": "SaveImage"
-      }
+  "3": {
+    "inputs": {
+      "seed": 1049288068054506,
+      "steps": 5,
+      "cfg": 3,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "beta",
+      "denoise": 0.35,
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "sd_xl_turbo_1.0_fp16.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "a girl in a red dress",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "ugly, painting, cartoon",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "10": {
+    "inputs": {
+      "image": "Reference_one.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "13": {
+    "inputs": {
+      "image": "Reference_two.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "pixels": [
+        "19",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "19": {
+    "inputs": {
+      "enabled": true,
+      "swap_model": "inswapper_128.onnx",
+      "facedetection": "retinaface_resnet50",
+      "face_restore_model": "none",
+      "face_restore_visibility": 1,
+      "codeformer_weight": 0.5,
+      "detect_gender_input": "no",
+      "detect_gender_source": "no",
+      "input_faces_index": "0",
+      "source_faces_index": "0",
+      "console_log_level": 1,
+      "input_image": [
+        "10",
+        0
+      ],
+      "source_image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "ReActorFaceSwap",
+    "_meta": {
+      "title": "ReActor 🌌 Fast Face Swap"
     }
   }
 }
