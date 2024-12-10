@@ -24,7 +24,8 @@ Do this for all needed models.
 # 4)
 The 'extra_model_paths.yaml' works fine, but as far as I know it only works for the nodes listed inside it. Trying to add folders such as 'custom_nodes' or 'sams: models/sams/' as to this date do not work... hopefuly it will work in the future.
 
-# 5)To use the Network drive in the pods just add it while creating the serverless endpoint.
+# 5)
+To use the Network drive in the pods just add it while creating the serverless endpoint.
 Make sure that the Network drive has indeed the models inside itself with the same structure of the 'extra_model_paths.yaml'.
 
 Here is an important point in the extra models file: there are the first two (important) lines as an example:
