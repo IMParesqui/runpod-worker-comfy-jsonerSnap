@@ -49,7 +49,7 @@ DO NOT alter this file, all the necessary chages to make the network drive be re
 # 6)
 Creating the image:
 
-run a cmd with a variation of this command line:
+run a cmd (on the project root) with a variation of this command line:
 
 docker build -t user/image_name:tag --platform linux/amd64 .
 

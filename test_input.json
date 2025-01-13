@@ -1,159 +1,1663 @@
 {
-  "3": {
+  "10": {
     "inputs": {
-      "seed": 1049288068054506,
-      "steps": 5,
-      "cfg": 3,
-      "sampler_name": "euler_ancestral",
-      "scheduler": "beta",
-      "denoise": 0.35,
-      "model": [
-        "4",
+      "title_regex": ".*",
+      "input_regex": "batch_size",
+      "group_regex": ".*",
+      "INT": [
+        "11",
         0
-      ],
-      "positive": [
-        "6",
-        0
-      ],
-      "negative": [
-        "7",
-        0
-      ],
-      "latent_image": [
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "11": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Int-🔬"
+  },
+  "13": {
+    "inputs": {
+      "title_regex": "Width",
+      "input_regex": "value",
+      "group_regex": "",
+      "INT": [
         "15",
-        0
-      ]
-    },
-    "class_type": "KSampler",
-    "_meta": {
-      "title": "KSampler"
-    }
-  },
-  "4": {
-    "inputs": {
-      "ckpt_name": "sd_xl_turbo_1.0_fp16.safetensors"
-    },
-    "class_type": "CheckpointLoaderSimple",
-    "_meta": {
-      "title": "Load Checkpoint"
-    }
-  },
-  "6": {
-    "inputs": {
-      "text": "a girl in a red dress",
-      "clip": [
-        "4",
         1
       ]
     },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
+    "class_type": "Anything Everywhere?"
   },
-  "7": {
+  "14": {
     "inputs": {
-      "text": "ugly, painting, cartoon",
-      "clip": [
-        "4",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "8": {
-    "inputs": {
-      "samples": [
-        "3",
-        0
-      ],
-      "vae": [
-        "4",
+      "title_regex": "Height",
+      "input_regex": "value",
+      "group_regex": "",
+      "INT": [
+        "15",
         2
       ]
     },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
-    }
+    "class_type": "Anything Everywhere?"
   },
-  "9": {
+  "15": {
     "inputs": {
-      "filename_prefix": "ComfyUI",
-      "images": [
-        "8",
-        0
-      ]
+      "aspect_ratio": "1:1"
     },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
-    }
+    "class_type": "SDXLAspectRatioSelector"
   },
-  "10": {
+  "16": {
     "inputs": {
       "image": "Reference_one.png",
       "upload": "image"
     },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "Load Image"
-    }
+    "class_type": "LoadImage"
   },
-  "13": {
+  "18": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "input",
+      "group_regex": ".*",
+      "IMAGE": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "19": {
+    "inputs": {
+      "image": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]"
+  },
+  "20": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "upscale_method": "lanczos",
+      "keep_proportion": false,
+      "divisible_by": 2,
+      "width_input": [
+        "57",
+        0
+      ],
+      "height_input": [
+        "58",
+        0
+      ],
+      "crop": "center",
+      "image": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ"
+  },
+  "21": {
     "inputs": {
       "image": "Reference_two.png",
       "upload": "image"
     },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "Load Image"
-    }
+    "class_type": "LoadImage"
   },
-  "15": {
+  "31": {
     "inputs": {
-      "pixels": [
-        "19",
+      "value": true
+    },
+    "class_type": "Bool-🔬"
+  },
+  "32": {
+    "inputs": {
+      "value": "\n"
+    },
+    "class_type": "String-🔬"
+  },
+  "33": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "String-🔬"
+  },
+  "35": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "String-🔬"
+  },
+  "36": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "String-🔬"
+  },
+  "37": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "String-🔬"
+  },
+  "40": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Bool-🔬"
+  },
+  "41": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Bool-🔬"
+  },
+  "42": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Bool-🔬"
+  },
+  "43": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "visibility",
+      "group_regex": ".*",
+      "FLOAT": [
+        "45",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "44": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "cfg",
+      "group_regex": ".*",
+      "FLOAT": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "45": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "Float-🔬"
+  },
+  "48": {
+    "inputs": {
+      "value": 3
+    },
+    "class_type": "Float-🔬"
+  },
+  "49": {
+    "inputs": {
+      "title_regex": "Detailer",
+      "input_regex": "steps",
+      "group_regex": "Refiner",
+      "INT": [
+        "67",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "50": {
+    "inputs": {
+      "title_regex": "Renderer",
+      "input_regex": "steps",
+      "group_regex": "Pass 2",
+      "INT": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "51": {
+    "inputs": {
+      "input1": [
+        "62",
         0
       ],
-      "vae": [
-        "4",
+      "input2": [
+        "60",
+        0
+      ]
+    },
+    "class_type": "MultiplyNode"
+  },
+  "52": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "height",
+      "group_regex": ".*",
+      "INT": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "53": {
+    "inputs": {
+      "input1": [
+        "60",
+        0
+      ],
+      "input2": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "MultiplyNode"
+  },
+  "54": {
+    "inputs": {
+      "value": [
+        "51",
+        0
+      ],
+      "mode": "round"
+    },
+    "class_type": "JWFloatToInteger"
+  },
+  "55": {
+    "inputs": {
+      "value": [
+        "53",
+        0
+      ],
+      "mode": "round"
+    },
+    "class_type": "JWFloatToInteger"
+  },
+  "56": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "width",
+      "group_regex": ".*",
+      "INT": [
+        "57",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "57": {
+    "inputs": {
+      "expression": "(((a/2)+1)*2)-2",
+      "a": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "58": {
+    "inputs": {
+      "expression": "(((a/2)+1)*2)-2",
+      "a": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss"
+  },
+  "59": {
+    "inputs": {
+      "boolean": [
+        "68",
+        0
+      ],
+      "on_true": [
+        "65",
+        0
+      ],
+      "on_false": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "Switch any [Crystools]"
+  },
+  "60": {
+    "inputs": {
+      "value": [
+        "59",
+        0
+      ]
+    },
+    "class_type": "FloatConstant"
+  },
+  "61": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "scale_by",
+      "group_regex": ".*",
+      "FLOAT": [
+        "60",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "62": {
+    "inputs": {
+      "value": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "INTConstant"
+  },
+  "63": {
+    "inputs": {
+      "value": [
+        "15",
         2
       ]
     },
-    "class_type": "VAEEncode",
-    "_meta": {
-      "title": "VAE Encode"
-    }
+    "class_type": "INTConstant"
   },
-  "19": {
+  "64": {
     "inputs": {
-      "enabled": true,
+      "float": 0.75
+    },
+    "class_type": "Primitive float [Crystools]"
+  },
+  "65": {
+    "inputs": {
+      "float": 0.5
+    },
+    "class_type": "Primitive float [Crystools]"
+  },
+  "66": {
+    "inputs": {
+      "value": 3
+    },
+    "class_type": "Int-🔬"
+  },
+  "67": {
+    "inputs": {
+      "value": 3
+    },
+    "class_type": "Int-🔬"
+  },
+  "68": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Bool-🔬"
+  },
+  "69": {
+    "inputs": {
+      "a": [
+        "74",
+        0
+      ],
+      "b": 17
+    },
+    "class_type": "JWIntegerAdd"
+  },
+  "70": {
+    "inputs": {
+      "a": [
+        "69",
+        0
+      ],
+      "b": 22
+    },
+    "class_type": "JWIntegerAdd"
+  },
+  "71": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "seed",
+      "group_regex": "Refiner",
+      "INT": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "72": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "seed",
+      "group_regex": "Pass 2",
+      "INT": [
+        "69",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "73": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "seed",
+      "group_regex": "Pass 1",
+      "INT": [
+        "74",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "74": {
+    "inputs": {
+      "seed": 176062309365880
+    },
+    "class_type": "Seed Everywhere"
+  },
+  "92": {
+    "inputs": {
+      "Prepend": [
+        "32",
+        0
+      ],
+      "Append": [
+        "33",
+        0
+      ],
+      "Delimiter": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "DF_String_Concatenate"
+  },
+  "93": {
+    "inputs": {
+      "Prepend": [
+        "94",
+        0
+      ],
+      "Append": [
+        "36",
+        0
+      ],
+      "Delimiter": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "DF_String_Concatenate"
+  },
+  "94": {
+    "inputs": {
+      "Prepend": [
+        "92",
+        0
+      ],
+      "Append": [
+        "35",
+        0
+      ],
+      "Delimiter": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "DF_String_Concatenate"
+  },
+  "95": {
+    "inputs": {
+      "ANY": [
+        "40",
+        0
+      ],
+      "IF_TRUE": [
+        "96",
+        0
+      ],
+      "IF_FALSE": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "96": {
+    "inputs": {
+      "string": ""
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "97": {
+    "inputs": {
+      "string": "(NFSW:1.2)"
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "98": {
+    "inputs": {
+      "ANY": [
+        "42",
+        0
+      ],
+      "IF_TRUE": [
+        "109",
+        0
+      ],
+      "IF_FALSE": [
+        "111",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "99": {
+    "inputs": {
+      "string": " "
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "100": {
+    "inputs": {
+      "Prepend": [
+        "95",
+        0
+      ],
+      "Append": [
+        "101",
+        0
+      ],
+      "Delimiter": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "DF_String_Concatenate"
+  },
+  "101": {
+    "inputs": {
+      "ANY": [
+        "42",
+        0
+      ],
+      "IF_TRUE": [
+        "106",
+        0
+      ],
+      "IF_FALSE": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "102": {
+    "inputs": {
+      "string": " "
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "103": {
+    "inputs": {
+      "string": " "
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "104": {
+    "inputs": {
+      "string": "ziprealism_neg"
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "105": {
+    "inputs": {
+      "ANY": [
+        "41",
+        0
+      ],
+      "IF_TRUE": [
+        "107",
+        0
+      ],
+      "IF_FALSE": [
+        "103",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "106": {
+    "inputs": {
+      "ANY": [
+        "41",
+        0
+      ],
+      "IF_TRUE": [
+        "104",
+        0
+      ],
+      "IF_FALSE": [
+        "102",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "107": {
+    "inputs": {
+      "string": "ac_neg1, ac_neg2"
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "108": {
+    "inputs": {
+      "string": " "
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "109": {
+    "inputs": {
+      "ANY": [
+        "41",
+        0
+      ],
+      "IF_TRUE": [
+        "110",
+        0
+      ],
+      "IF_FALSE": [
+        "108",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "110": {
+    "inputs": {
+      "string": "ziprealism"
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "111": {
+    "inputs": {
+      "string": " "
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "112": {
+    "inputs": {
+      "Prepend": [
+        "100",
+        0
+      ],
+      "Append": [
+        "118",
+        0
+      ],
+      "Delimiter": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "DF_String_Concatenate"
+  },
+  "113": {
+    "inputs": {
+      "string": ", "
+    },
+    "class_type": "Primitive string [Crystools]"
+  },
+  "114": {
+    "inputs": {
+      "String": [
+        "115",
+        0
+      ],
+      "Regex": " ,",
+      "ReplaceWith": ""
+    },
+    "class_type": "ReplaceString"
+  },
+  "115": {
+    "inputs": {
+      "Prepend": [
+        "112",
+        0
+      ],
+      "Append": [
+        "37",
+        0
+      ],
+      "Delimiter": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "DF_String_Concatenate"
+  },
+  "116": {
+    "inputs": {
+      "Prepend": [
+        "93",
+        0
+      ],
+      "Append": [
+        "98",
+        0
+      ],
+      "Delimiter": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "DF_String_Concatenate"
+  },
+  "117": {
+    "inputs": {
+      "String": [
+        "116",
+        0
+      ],
+      "Regex": " ,",
+      "ReplaceWith": ""
+    },
+    "class_type": "ReplaceString"
+  },
+  "118": {
+    "inputs": {
+      "Prepend": [
+        "105",
+        0
+      ],
+      "Append": [
+        "125",
+        0
+      ],
+      "Delimiter": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "DF_String_Concatenate"
+  },
+  "119": {
+    "inputs": {
+      "source": [
+        "117",
+        0
+      ],
+      "to_replace": ".",
+      "replace_with": ","
+    },
+    "class_type": "JWStringReplace"
+  },
+  "120": {
+    "inputs": {
+      "source": [
+        "114",
+        0
+      ],
+      "to_replace": ".",
+      "replace_with": ","
+    },
+    "class_type": "JWStringReplace"
+  },
+  "122": {
+    "inputs": {
+      "title_regex": "Positive",
+      "input_regex": "text",
+      "group_regex": "Backend - Face Transfer Pass",
+      "STRING": [
+        "119",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "123": {
+    "inputs": {
+      "title_regex": "Negative",
+      "input_regex": "text",
+      "group_regex": "Backend - Face Transfer Pass",
+      "STRING": [
+        "120",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "125": {
+    "inputs": {
+      "value": "ac_neg1, ac_neg2, disproportional, bad hands, malformed, unprofessional, obese, big head"
+    },
+    "class_type": "String-🔬"
+  },
+  "132": {
+    "inputs": {
+      "instantid_file": "intantID_ip-adapter.bin"
+    },
+    "class_type": "InstantIDModelLoader"
+  },
+  "133": {
+    "inputs": {
+      "INSTANTID": [
+        "132",
+        0
+      ],
+      "FACEANALYSIS": [
+        "138",
+        0
+      ],
+      "CONTROL_NET": [
+        "134",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere3"
+  },
+  "134": {
+    "inputs": {
+      "control_net_name": "InstantID_diffusion_pytorch_model.safetensors"
+    },
+    "class_type": "ControlNetLoader"
+  },
+  "135": {
+    "inputs": {
+      "ckpt_name": "turbovisionxlSuperFastXLBasedOnNew_tvxlV431Bakedvae.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple"
+  },
+  "136": {
+    "inputs": {
+      "text": [
+        "120",
+        0
+      ],
+      "clip": [
+        "135",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "137": {
+    "inputs": {
+      "title_regex": "KPS",
+      "input_regex": "_a",
+      "group_regex": "Monitoring",
+      "*": [
+        "143",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "138": {
+    "inputs": {
+      "provider": "CUDA"
+    },
+    "class_type": "InstantIDFaceAnalysis"
+  },
+  "139": {
+    "inputs": {
+      "image": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]"
+  },
+  "140": {
+    "inputs": {
+      "image": [
+        "143",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]"
+  },
+  "141": {
+    "inputs": {
+      "text": [
+        "119",
+        0
+      ],
+      "clip": [
+        "135",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "142": {
+    "inputs": {
+      "title_regex": "Sampler Output Pass 1",
+      "input_regex": "image",
+      "group_regex": "Face Analysis",
+      "IMAGE": [
+        "146",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "143": {
+    "inputs": {
+      "ANY": [
+        "31",
+        0
+      ],
+      "IF_TRUE": [
+        "20",
+        0
+      ],
+      "IF_FALSE": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "If ANY return A else B-🔬"
+  },
+  "144": {
+    "inputs": {
+      "title_regex": "KPS",
+      "input_regex": "_b",
+      "group_regex": "Monitoring",
+      "*": [
+        "143",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "145": {
+    "inputs": {
+      "width": [
+        "57",
+        0
+      ],
+      "height": [
+        "58",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage"
+  },
+  "146": {
+    "inputs": {
+      "enabled": [
+        "42",
+        0
+      ],
       "swap_model": "inswapper_128.onnx",
       "facedetection": "retinaface_resnet50",
-      "face_restore_model": "none",
-      "face_restore_visibility": 1,
-      "codeformer_weight": 0.5,
+      "face_restore_model": "codeformer-v0.1.0.pth",
+      "face_restore_visibility": [
+        "45",
+        0
+      ],
+      "codeformer_weight": 1,
       "detect_gender_input": "no",
       "detect_gender_source": "no",
       "input_faces_index": "0",
       "source_faces_index": "0",
       "console_log_level": 1,
       "input_image": [
-        "10",
-        0
+        "152",
+        5
       ],
       "source_image": [
-        "13",
+        "158",
         0
       ]
     },
-    "class_type": "ReActorFaceSwap",
-    "_meta": {
-      "title": "ReActor 🌌 Fast Face Swap"
-    }
+    "class_type": "ReActorFaceSwap"
+  },
+  "147": {
+    "inputs": {
+      "weight": 1,
+      "start_at": 0,
+      "end_at": 1,
+      "image": [
+        "158",
+        0
+      ],
+      "image_kps": [
+        "143",
+        0
+      ],
+      "instantid": [
+        "132",
+        0
+      ],
+      "insightface": [
+        "138",
+        0
+      ],
+      "control_net": [
+        "134",
+        0
+      ],
+      "model": [
+        "135",
+        0
+      ],
+      "positive": [
+        "141",
+        0
+      ],
+      "negative": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "ApplyInstantID"
+  },
+  "148": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "negative",
+      "group_regex": "Backend - Face Transfer Pass 1",
+      "CONDITIONING": [
+        "136",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "149": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "positive",
+      "group_regex": "Backend - Face Transfer Pass 1",
+      "CONDITIONING": [
+        "141",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "150": {
+    "inputs": {
+      "MODEL": [
+        "135",
+        0
+      ],
+      "CLIP": [
+        "135",
+        1
+      ],
+      "VAE": [
+        "135",
+        2
+      ]
+    },
+    "class_type": "Anything Everywhere3"
+  },
+  "151": {
+    "inputs": {
+      "title_regex": "InstantID",
+      "input_regex": "kps",
+      "group_regex": "Pass 2",
+      "IMAGE": [
+        "146",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "152": {
+    "inputs": {
+      "seed": [
+        "74",
+        0
+      ],
+      "steps": 3,
+      "cfg": 2.5,
+      "sampler_name": "dpmpp_sde_gpu",
+      "scheduler": "AYS SDXL",
+      "denoise": 1,
+      "preview_method": "none",
+      "vae_decode": "true",
+      "model": [
+        "147",
+        0
+      ],
+      "positive": [
+        "147",
+        1
+      ],
+      "negative": [
+        "147",
+        2
+      ],
+      "latent_image": [
+        "145",
+        0
+      ],
+      "optional_vae": [
+        "135",
+        2
+      ]
+    },
+    "class_type": "KSampler (Efficient)"
+  },
+  "155": {
+    "inputs": {
+      "title_regex": "Face Input",
+      "input_regex": "_b",
+      "group_regex": ".*",
+      "IMAGE": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "156": {
+    "inputs": {
+      "title_regex": "Face Input",
+      "input_regex": "reference",
+      "group_regex": ".*",
+      "IMAGE": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "157": {
+    "inputs": {
+      "title_regex": "ReActor Pose",
+      "input_regex": "source",
+      "group_regex": ".*",
+      "IMAGE": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "158": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "upscale_method": "lanczos",
+      "keep_proportion": false,
+      "divisible_by": 2,
+      "width_input": [
+        "57",
+        0
+      ],
+      "height_input": [
+        "58",
+        0
+      ],
+      "crop": "center",
+      "image": [
+        "159",
+        0
+      ]
+    },
+    "class_type": "ImageResizeKJ"
+  },
+  "159": {
+    "inputs": {
+      "number_of_faces": 1,
+      "scale_factor": 4,
+      "shift_factor": 0.7000000000000001,
+      "start_index": 0,
+      "max_faces_per_image": 50,
+      "aspect_ratio": "3:4",
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "AutoCropFaces"
+  },
+  "161": {
+    "inputs": {
+      "width": [
+        "57",
+        0
+      ],
+      "height": [
+        "58",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage"
+  },
+  "162": {
+    "inputs": {
+      "title_regex": "Sampler Output Pass 2",
+      "input_regex": "image",
+      "group_regex": "Face Analysis",
+      "IMAGE": [
+        "169",
+        5
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "163": {
+    "inputs": {
+      "title_regex": ".*",
+      "input_regex": "model",
+      "group_regex": "Refiner & Upscaler",
+      "MODEL": [
+        "169",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "164": {
+    "inputs": {
+      "weight": 1,
+      "start_at": 0,
+      "end_at": 1,
+      "image": [
+        "158",
+        0
+      ],
+      "positive": [
+        "165",
+        0
+      ],
+      "negative": [
+        "166",
+        0
+      ],
+      "instantid": [
+        "132",
+        0
+      ],
+      "insightface": [
+        "138",
+        0
+      ],
+      "control_net": [
+        "134",
+        0
+      ],
+      "model": [
+        "135",
+        0
+      ],
+      "image_kps": [
+        "146",
+        0
+      ]
+    },
+    "class_type": "ApplyInstantID"
+  },
+  "165": {
+    "inputs": {
+      "text": [
+        "119",
+        0
+      ],
+      "clip": [
+        "135",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "166": {
+    "inputs": {
+      "text": [
+        "120",
+        0
+      ],
+      "clip": [
+        "135",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode"
+  },
+  "167": {
+    "inputs": {
+      "title_regex": "ControlNet",
+      "input_regex": "positive",
+      "group_regex": "Refiner & Upscaler",
+      "CONDITIONING": [
+        "169",
+        1
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "168": {
+    "inputs": {
+      "title_regex": "ControlNet",
+      "input_regex": "negative",
+      "group_regex": "Refiner & Upscaler",
+      "CONDITIONING": [
+        "169",
+        2
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "169": {
+    "inputs": {
+      "seed": [
+        "69",
+        0
+      ],
+      "steps": [
+        "66",
+        0
+      ],
+      "cfg": 2.5,
+      "sampler_name": "dpmpp_sde_gpu",
+      "scheduler": "AYS SDXL",
+      "denoise": 1,
+      "preview_method": "none",
+      "vae_decode": "true",
+      "model": [
+        "164",
+        0
+      ],
+      "positive": [
+        "164",
+        1
+      ],
+      "negative": [
+        "164",
+        2
+      ],
+      "latent_image": [
+        "161",
+        0
+      ],
+      "optional_vae": [
+        "135",
+        2
+      ]
+    },
+    "class_type": "KSampler (Efficient)"
+  },
+  "171": {
+    "inputs": {
+      "image": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]"
+  },
+  "176": {
+    "inputs": {
+      "title_regex": "Face Swap",
+      "input_regex": "image",
+      "group_regex": "Face Analysis",
+      "IMAGE": [
+        "177",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "177": {
+    "inputs": {
+      "enabled": [
+        "42",
+        0
+      ],
+      "swap_model": "inswapper_128.onnx",
+      "facedetection": "retinaface_resnet50",
+      "face_restore_model": "codeformer-v0.1.0.pth",
+      "face_restore_visibility": [
+        "45",
+        0
+      ],
+      "codeformer_weight": 1,
+      "detect_gender_input": "no",
+      "detect_gender_source": "no",
+      "input_faces_index": "0",
+      "source_faces_index": "0",
+      "console_log_level": 1,
+      "input_image": [
+        "169",
+        5
+      ],
+      "source_image": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "ReActorFaceSwap"
+  },
+  "180": {
+    "inputs": {
+      "control_net_name": "Union-sdxl_model.safetensors"
+    },
+    "class_type": "ControlNetLoader"
+  },
+  "181": {
+    "inputs": {
+      "title_regex": "Final Image Output",
+      "input_regex": ".*",
+      "group_regex": ".*",
+      "IMAGE": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "183": {
+    "inputs": {
+      "pixels": [
+        "193",
+        0
+      ],
+      "vae": [
+        "135",
+        2
+      ]
+    },
+    "class_type": "VAEEncode"
+  },
+  "184": {
+    "inputs": {
+      "interpolation_mode": "nearest exact",
+      "image": [
+        "158",
+        0
+      ]
+    },
+    "class_type": "JWImageResizeToClosestSDXLResolution"
+  },
+  "185": {
+    "inputs": {
+      "title_regex": "Refiner",
+      "input_regex": "image",
+      "group_regex": "Face Analysis",
+      "IMAGE": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?"
+  },
+  "186": {
+    "inputs": {
+      "method": "mkl",
+      "strength": 1,
+      "image_ref": [
+        "193",
+        0
+      ],
+      "image_target": [
+        "188",
+        5
+      ]
+    },
+    "class_type": "ColorMatch"
+  },
+  "187": {
+    "inputs": {
+      "enabled": [
+        "42",
+        0
+      ],
+      "swap_model": "inswapper_128.onnx",
+      "facedetection": "retinaface_resnet50",
+      "face_restore_model": "codeformer-v0.1.0.pth",
+      "face_restore_visibility": [
+        "45",
+        0
+      ],
+      "codeformer_weight": 1,
+      "detect_gender_input": "no",
+      "detect_gender_source": "no",
+      "input_faces_index": "0",
+      "source_faces_index": "0",
+      "console_log_level": 1,
+      "input_image": [
+        "186",
+        0
+      ],
+      "source_image": [
+        "184",
+        0
+      ]
+    },
+    "class_type": "ReActorFaceSwap"
+  },
+  "188": {
+    "inputs": {
+      "seed": [
+        "70",
+        0
+      ],
+      "steps": [
+        "67",
+        0
+      ],
+      "cfg": 1,
+      "sampler_name": "dpmpp_sde_gpu",
+      "scheduler": "AYS SDXL",
+      "denoise": 0.75,
+      "preview_method": "none",
+      "vae_decode": "true",
+      "positive": [
+        "189",
+        0
+      ],
+      "negative": [
+        "189",
+        1
+      ],
+      "latent_image": [
+        "183",
+        0
+      ],
+      "model": [
+        "169",
+        0
+      ],
+      "optional_vae": [
+        "135",
+        2
+      ]
+    },
+    "class_type": "KSampler (Efficient)"
+  },
+  "189": {
+    "inputs": {
+      "strength": 0.5,
+      "start_percent": 0,
+      "end_percent": 1,
+      "control_net": [
+        "180",
+        0
+      ],
+      "image": [
+        "193",
+        0
+      ],
+      "positive": [
+        "169",
+        1
+      ],
+      "negative": [
+        "169",
+        2
+      ],
+      "vae": [
+        "135",
+        2
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced"
+  },
+  "191": {
+    "inputs": {
+      "upscale_model": [
+        "192",
+        0
+      ],
+      "image": [
+        "177",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel"
+  },
+  "192": {
+    "inputs": {
+      "model_name": "4x-ClearRealityV1.pth"
+    },
+    "class_type": "UpscaleModelLoader"
+  },
+  "193": {
+    "inputs": {
+      "interpolation_mode": "nearest exact",
+      "image": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "JWImageResizeToClosestSDXLResolution"
+  },
+  "215": {
+    "inputs": {
+      "image": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "Get resolution [Crystools]"
+  },
+  "216": {
+    "inputs": {
+      "filename_prefix": [
+        "217",
+        0
+      ],
+      "images": [
+        "187",
+        0
+      ]
+    },
+    "class_type": "SaveImage"
+  },
+  "217": {
+    "inputs": {
+      "string": "CyberAvatar_v1o1_"
+    },
+    "class_type": "Primitive string [Crystools]"
   }
 }
