@@ -69,3 +69,74 @@ useful links:
 https://github.com/blib-la/runpod-worker-comfy
 
 Now all you need is the http post in order to make requests.
+
+
+---------------------------------------------\\--------------------------------------------
+
+#Snapshot Issues and or technicalities.
+
+Here are some issues about the snapshot that may break the proper way of working:
+
+thge snapshot json may come in two parts, there is an example below:
+
+{
+    "comfyui": "2ff3104f70767a897e5468a0fe632fbd5a432b40",
+    "git_custom_nodes": {
+        "https://github.com/chrisgoringe/cg-use-everywhere": {
+            "hash": "ce510b97d10e69d5fd0042e115ecd946890d2079",
+            "disabled": false
+        }
+    },
+    "cnr_custom_nodes": {
+        "comfyui-logic": "1.0.0"
+    },
+  .
+  .
+  .
+}
+
+If the node is in "git_custom_nodes", then it will work properly and be inported normally when restoring the snapshot, but if it falls in the "cnr_custom_nodes" category, it will fail to be imported and the nodes will be unavalible in the desired workflow.
+
+How to avoid/fix this? Well, in theoty this happens because these nodes were not imported via the Manager (although it was.. but Comfy did not recognize it T_T), but! all may not be lost yet, since, once again, in theory, this may be fixed ig there is a **.git folder** in the node folder. This way ComfyUI Manager can access the repository and download it consistently.
+
+One way, although more manually is to install the nodes, and if any of them breaks, clone the repo from git into the project and then hit FixNode in the manager to ensure its working properly, this way it should not lose its reference and fix any problems.
+
+
+
+#Newer Images
+
+This repo already comes with a comfy and a linux and all is set accordingly, no need to wory, just add a snapshot and be happy.
+This repos does NOT have any models listed in the folders of Extra_paths.yaml, but has the requirements of the models:
+
+models/instantid/intantID_ip-adapter.bin
+models/insightface/inswapper_128.onnx
+models/insightface/models/antelopev2
+models/insightface/models/buffalo_l
+models/facerestore_models
+models/facedetection
+models/RMBG/RMBG-2.0
+
+This repo already have a few nodes preinstalled, so no need to wory about them, here is the list:
+
+"https://github.com/ltdrdata/ComfyUI-Manager"
+"https://github.com/cubiq/ComfyUI_FaceAnalysis"
+"https://github.com/chrisgoringe/cg-use-everywhere"
+"https://github.com/BadCafeCode/masquerade-nodes-comfyui"
+"https://github.com/aria1th/ComfyUI-LogicUtils"
+"https://github.com/audioscavenger/ComfyUI-Thumbnails"
+"https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes"
+"https://github.com/WASasquatch/was-node-suite-comfyui"
+"https://github.com/liusida/ComfyUI-AutoCropFaces"
+"https://github.com/crystian/ComfyUI-Crystools"
+"https://github.com/kijai/ComfyUI-KJNodes"
+"https://github.com/pythongosssss/ComfyUI-Custom-Scripts"
+"https://github.com/jamesWalker55/comfyui-various"
+"https://github.com/cubiq/ComfyUI_InstantID"
+"https://github.com/sipherxyz/comfyui-art-venture"
+"https://github.com/rgthree/rgthree-comfy"
+"https://github.com/yolain/ComfyUI-Easy-Use"
+"https://github.com/thecooltechguy/ComfyUI-ComfyWorkflows"
+"https://github.com/chflame163/ComfyUI_LayerStyle"
+"https://github.com/jags111/efficiency-nodes-comfyui"
+
+glhf

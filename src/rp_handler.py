@@ -279,6 +279,7 @@ def process_output_images(outputs, job_id):
     #            "status": "success",
     #            "message": f"the image does not exist in the specified output folder: {local_image_path}",
     #        }
+    print(f"AWS images paths: {imageurls}")
 
     if allsuccess:
         return {
