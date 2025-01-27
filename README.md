@@ -139,4 +139,4 @@ This repo already have a few nodes preinstalled, so no need to wory about them, 
 "https://github.com/chflame163/ComfyUI_LayerStyle"
 "https://github.com/jags111/efficiency-nodes-comfyui"
 
-glhf
+glhf, alas, if you want to use this image, the repo is: pareskomon/dev:cannon
