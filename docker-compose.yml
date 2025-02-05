@@ -1,6 +1,6 @@
 services:
   comfyui-worker:
-    image: pareskomon/dev:cannon
+    image: pareskomon/dev:t18
     deploy:
       resources:
         reservations:

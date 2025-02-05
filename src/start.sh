@@ -1,7 +1,20 @@
 #!/usr/bin/env bash
 
 echo "Symlinking files from Network Volume"
-ln -s /runpod-volume /workspace
+
+SOURCE_DIR="/runpod-volume/models"
+TARGET_LINK="/comfyui/models"
+rm -rf /comfyui/models
+
+# Create the symbolic link
+ln -s "$SOURCE_DIR" "$TARGET_LINK"
+
+# Verify the symlink was created
+if [ -L "$TARGET_LINK" ]; then
+    echo "Symlink created: $TARGET_LINK -> $SOURCE_DIR"
+else
+    echo "Failed to create symlink."
+fi
 
 # Use libtcmalloc for better memory management
 TCMALLOC="$(ldconfig -p | grep -Po "libtcmalloc.so.\d" | head -n 1)"
